@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+   servidor:
+     container_name: servidor
+     tty: true
+     build:
+       dockerfile: Dockerfile
+       context: .
+     networks:
+       - appnet
+     volumes:
+       - ./utnso:/home/utnso
+
+networks:
+   appnet:
+     driver: "bridge"
